@@ -23,9 +23,9 @@ Il est possible de s'inscrire sur le site, cela permet de déposer des fichiers.
 Un captcha est utilisé sur le formulaire de login, la gestion des utilisateurs enregistrés est faites avec l'ORM Doctrine, le mot de passe utilisateur est crypté en base de données.
 L'administrateur du site à la possiblité de gérer (ajouter/supprimer/mettre à jour) les nouvelles disponibles sur le site.
 ### Reste à faire
-Intégration/desgin, ce qui est en place n'est pas travaillé.
-Tri des fichiers par catégories/utilisateurs
-Intégration du lecteur de fichiers sons en popup (permettre de naviguer sur le site en écoutant un fichier)
+- Intégration/desgin, ce qui est en place n'est pas travaillé.
+- Tri des fichiers par catégories/utilisateurs
+- Intégration du lecteur de fichier son en popup (permettre de naviguer sur le site en écoutant un fichier)
 #### droits d'auteurs
 Dans le cadre du respect des droits d'auteurs, les fichiers mp3 utilisés avec l'application sont limités à 10 secondes.
 
