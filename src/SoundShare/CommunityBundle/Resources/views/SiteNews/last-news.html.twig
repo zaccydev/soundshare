@@ -1,0 +1,8 @@
+{# empty Twig template #}
+{% for n in news %} 
+    <div>
+        <h3>{{ n.title }}</h3>
+        <p>{{ n.summary }}</p>
+        <a href="{{ path('sound_share_community_readanews', {'id': n.id}) }}">Read more</a>
+    </div>
+{% endfor %}

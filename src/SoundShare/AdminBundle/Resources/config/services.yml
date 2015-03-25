@@ -1,0 +1,4 @@
+services:
+#    sound_share_admin.example:
+#        class: SoundShare\AdminBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

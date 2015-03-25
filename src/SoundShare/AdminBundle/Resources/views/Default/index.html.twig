@@ -1,0 +1,12 @@
+ {%extends "SoundShareCommunityBundle::layout.html.twig" %}
+ {% block content %}
+Welcome to the admin inteface.
+<div>
+    <p>Available actions</p>
+    <div>
+        <p>Handle site's news</p>
+        <a href="{{ path('admin_sitenews_create') }}">Add a news</a>
+        <a href="{{ path('admin_sitenews') }}">Handle the news</a>
+    </div>
+</div>
+{% endblock %}

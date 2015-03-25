@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/var/www/symfony/sfblog/.gitignore</file>
+            <file>file:/var/www/symfony/sfblog/app/config/routing.yml</file>
+            <file>file:/var/www/symfony/sfblog/app/config/routing_dev.yml</file>
+            <file>file:/var/www/symfony/sfblog/app/config/security.yml</file>
+        </group>
+    </open-files>
+</project-private>

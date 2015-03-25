@@ -1,0 +1,6 @@
+sound_share_admin_homepage:
+    path:     /admin
+    defaults: { _controller: SoundShareAdminBundle:Default:index }
+_site_news:
+    resource: "@SoundShareAdminBundle/Controller/SiteNewsController.php"
+    type:     annotation

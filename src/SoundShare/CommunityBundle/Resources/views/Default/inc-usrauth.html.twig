@@ -1,0 +1,6 @@
+  
+{% if app.user %}
+    <a href="{{ path('ss_logout') }}">Disconnect</a>
+{% else %}
+    <a href="{{ path('ss_login') }}">Login</a> // <a href="{{ path('ss_register') }}">Register</a>        
+{% endif %}

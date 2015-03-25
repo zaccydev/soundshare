@@ -1,0 +1,45 @@
+#routes for Sound/Default Ctl  
+ss_sound_upload:
+    path: /sound/upload
+    defaults: { _controller: SoundShareCommunityBundle:Default:uploadSound }
+ss_sound_read:
+    path: /sound/read/{fileName}
+    defaults: { _controller: SoundShareCommunityBundle:Default:getSoundResource }
+sound_share_community_homepage:
+    path:     /
+    defaults: { _controller: SoundShareCommunityBundle:Default:index }
+
+#routes for Account Ctl
+ss_register:
+    path:     /register
+    defaults: { _controller: SoundShareCommunityBundle:Account:register }
+sound_share_community_register_success:
+    path:     /registered
+    defaults: { _controller: SoundShareCommunityBundle:Account:registered }
+ss_account:
+    path: /account
+    defaults: { _controller: SoundShareCommunityBundle:Account:account }
+ss_account_edit:
+    path: /account/edit
+    defaults: { _controller: SoundShareCommunityBundle:Account:accountEdit }
+    
+#routes for login/out, defaults and Security Ctl
+ss_login:
+    path: /login
+    defaults: { _controller: SoundShareSecurityBundle:Security:login }
+ss_login_check:
+    path: /login_check    
+ss_logout:
+    path: /logout  
+    
+#routes for SiteNews Ctl  
+sound_share_community_readanews:
+    path:     /news/{id}
+    defaults: { _controller: SoundShareCommunityBundle:SiteNews:readOneNews }
+    requirements: {id : '\d+'}
+    
+#routes for the friend section : Friend Ctl -- defined as annotation
+_ss_friends:
+    resource: "@SoundShareCommunityBundle/Controller/FriendController.php"
+    type: annotation
+    

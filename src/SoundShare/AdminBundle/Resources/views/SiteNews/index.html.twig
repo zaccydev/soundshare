@@ -1,0 +1,49 @@
+{%extends "SoundShareCommunityBundle::layout.html.twig" %}
+
+{% block content %}
+    <h1>SiteNews list</h1>
+
+    <table class="table records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Soundpath</th>
+                <th>Imagepath</th>
+                <th>Summary</th>
+                <th>Content</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('admin_sitenews_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.title }}</td>
+                <td>{{ entity.soundPath }}</td>
+                <td>{{ entity.imagePath }}</td>
+                <td>{{ entity.summary }}</td>
+                <td>{{ entity.content }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('admin_sitenews_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('admin_sitenews_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('admin_sitenews_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

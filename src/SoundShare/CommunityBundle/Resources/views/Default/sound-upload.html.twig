@@ -1,0 +1,24 @@
+{% form_theme form 'SoundShareCommunityBundle:Form:fields.html.twig' %}
+{%extends "SoundShareCommunityBundle::layout.html.twig" %}
+{% block content %}
+    
+    {#<form {{form_enctype(form)}}>#}
+    
+    {# Errors not shown when  using html tag to start and end the form elt  #}
+    
+  {{ form_start(form, {attr:{novalidate:'novalidate'}}) }}
+    {{ form_errors(form) }}      
+    {{ form_row(form.name) }} 
+    <div class="form-group">          
+        {{ form_widget(form.isPublic) }}  
+        {{ form_label(form.isPublic) }}  
+    </div>
+    <div class="form-group">                    
+        {{ form_errors(form.file) }}
+        {{ form_widget(form.file, {attr: {class: 'btn btn-default'}}) }}                       
+    </div>
+    {{ form_row(form.style) }} 
+    {{ form_row(form.upload) }} 
+  {{ form_end(form)}}
+  
+{% endblock %}

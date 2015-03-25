@@ -1,0 +1,18 @@
+SoundShare\CommunityBundle\Entity\User:
+  properties:
+    login:
+      - NotBlank: {groups: [common]}
+      - Length: { min: 4, max: 20, groups: [common] }          
+    email:
+      - Email : {groups: [common]}
+    password:
+      - Length : {min: 4, max: 20, groups: [registration]} 
+      
+SoundShare\CommunityBundle\Entity\SoundFile:
+    getters:
+        fileTypeAllowed: 
+           - "True" : { message: "File type must be WAV, MP3 or FLAC" }         
+    properties:
+        file:
+            - File: { maxSize: 10000000 } 
+            #10 mega            

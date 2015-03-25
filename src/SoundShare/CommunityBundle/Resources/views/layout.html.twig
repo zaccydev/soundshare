@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block title 'SoundShare Website' %}
+
+    {% block body %}
+        <div class="container">
+            {% block content_header %}
+                <header class="row">        
+                    <div class="col-xs-9"
+                         <ul id="menu">
+                             <li><a href="{{ path('sound_share_community_homepage') }}">Home</a></li>
+                             <li><a href="{{ path('ss_account') }}">My account</a></li>
+                             <li><a href="{{ path('ss_user_list') }}">Member list</a></li>
+                             <li><a href="{{ path('ss_sound_upload') }}">Add a song</a></li>
+                        </ul>
+                    </div>                  
+                    <div class="col-xs-3" >{{ include('SoundShareCommunityBundle::Default/inc-usrauth.html.twig') }}</div>
+
+                </header>
+            {% endblock %}
+        </div>
+        
+        <div class="container content-wrapper">
+            <div class="row flash-message">
+                {% for flashMessage in app.session.flashbag.get('notice') %}
+                    <div class="col-xs-8 flash-message-message">
+                        <em>Notice</em>: {{ flashMessage }}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row content">
+                <div class="col-xs-2">{{ render(controller( 'SoundShareCommunityBundle:SiteNews:getLastNews')) }}</div>
+                <div class="col-xs-8">
+                    <div class="container-fluid">
+                    {% block content %}{% endblock %}
+                    </div>
+                </div>
+            <div class="col-xs-2"></div>
+            </div>
+        </div>
+            
+        <footer class="container"></footer>
+
+{% endblock %}

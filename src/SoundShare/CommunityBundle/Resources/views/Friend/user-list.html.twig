@@ -1,0 +1,36 @@
+{% extends "SoundShareCommunityBundle::layout.html.twig" %}
+{% block content %} 
+
+<div>
+    <h3>Sound Share members list</h3>
+    <table class="table" id="sound-table">
+        <thead>
+            <tr>
+                <th>Login</th>
+                <th>Music styles</th>
+                <th>Country</th>
+                <th>Présentation</th>
+                <th>Add to my friend</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.login }}</td>
+                    <td>
+                        <ul>{% for style in user.musicStyles %}
+                            <li>{{ style }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>{{ user.getCountryName }}</td>
+                    <td>{{ user.presentation }}</td>
+                    <td><a href='{{ path('ss_user_addfriend', {'userId':user.id, 'userName':user.login}) }}'>X</a></td>
+                </tr>    
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+                
+{% endblock %}

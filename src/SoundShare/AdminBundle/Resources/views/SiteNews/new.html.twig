@@ -1,0 +1,16 @@
+{% form_theme form 'SoundShareCommunityBundle:Form:fields.html.twig' %}
+{%extends "SoundShareCommunityBundle::layout.html.twig" %}
+
+{% block content %}
+    <h1>SiteNews creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('admin_sitenews') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

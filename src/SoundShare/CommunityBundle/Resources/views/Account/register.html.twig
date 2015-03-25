@@ -1,0 +1,19 @@
+{% form_theme form 'SoundShareCommunityBundle:Form:fields.html.twig' %}
+{%extends "SoundShareCommunityBundle::layout.html.twig" %}
+{% block content %}
+<div class="row"> 
+    <div class="col-lg-6"> 
+{{ form_start(form, {attr:{novalidate:'novalidate'}}) }}
+       {{ form_errors(form) }}
+       {{ form_row(form.login) }} 
+       {{ form_row(form.email, {attr: { placeholder: 'enter a valid mail address', }}) }} 
+       {% if editing == false %}
+           {{ form_row(form.password)}} 
+       {% endif %}
+       {{ form_row(form.country) }} 
+       {{ form_row(form.presentation) }} 
+       {{ form_row(form.musicStyles, {attr: { class: 'dropdown' }}) }} 
+    {{ form_end(form) }}
+        </div>
+</div>
+{% endblock %}

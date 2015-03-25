@@ -1,0 +1,12 @@
+sound_share_admin:
+    resource: "@SoundShareAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+sound_share_security:
+    resource: "@SoundShareSecurityBundle/Resources/config/routing.yml"
+    prefix:   /
+
+sound_share_community:
+    resource: "@SoundShareCommunityBundle/Resources/config/routing.yml"
+    prefix:   /
+

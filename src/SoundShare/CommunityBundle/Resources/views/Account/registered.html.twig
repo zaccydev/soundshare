@@ -1,0 +1,5 @@
+{%extends "SoundShareCommunityBundle::layout.html.twig" %}
+{% set user = app.session.get('user') %}
+{% block content %}
+ Welcome here {{ user.getLogin()  }} you'll receive an email at {{ user.getEmail() }} click on the validation link to activate your account.
+{% endblock %}

@@ -1,0 +1,59 @@
+{%extends "SoundShareCommunityBundle::layout.html.twig" %}
+{% block content %}
+    <h2>Your account information</h2>
+    <dd>
+    <dt>Login</dt>
+    <dl>{{ user.login }}</dl>
+    
+    <dt>Email</dt>
+    <dl>{{ user.email }}</dl>
+    
+    <dt>Country</dt>
+    <dl>{{ user.countryName }}</dl>
+    
+    <dt>Presentation</dt>
+    <dl>{{ user.presentation }}</dl>
+    
+    <dt>Music styles</dt>
+    <dl>
+        <ul>
+            {% for styles in user.musicStyles %}
+                <li>{{ styles }}</li>
+            {% endfor %}
+        </ul>
+    </dl>
+    </dd>
+    <div>
+        Edit my account - <a href="{{ path('ss_account_edit')}}">edit</a>
+    </div>
+        
+    <div>
+        <h3>- Friend list -</h3>
+        {% set friends = user.myFriends %}
+        {% if friends|length > 0 %}
+             <p>Your current friend list ( you share your private files with them )</p>
+            <ul>
+                {% for friend in friends %}
+                <li>{{ friend.login }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>You currently don't have friend on sound share, add some to share private sounds with them</p>            
+        {% endif %}
+    </div>
+        
+        <div>
+        <h3>- Friend with you -</h3>
+        {% set userFriends = user.friendsWithMe %}
+        {% if userFriends|length > 0 %}
+             <p>Those users are friend with you ( the share sound with you )</p>
+            <ul>
+                {% for friend in userFriends %}
+                <li>{{ friend.login }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Currently nobody has added you in its friend list</p>            
+        {% endif %}
+    </div>    
+{% endblock %}

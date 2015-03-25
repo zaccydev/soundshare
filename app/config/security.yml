@@ -1,0 +1,36 @@
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+        SoundShare\CommunityBundle\Entity\User:
+            algorithm: bcrypt
+            cost: 12
+   
+    role_hierarchy:
+        ROLE_ADMIN: ROLE_USER
+        #ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    providers:               
+        main:
+            entity: {class: SoundShare\CommunityBundle\Entity\User, property: login}        
+
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/account, roles: ROLE_USER }
+        - { path: ^/sound/upload, roles: ROLE_USER }
+        - { path: ^/member, roles: ROLE_USER }        
+    firewalls:           
+        sshare_community:
+            pattern: ^/
+            anonymous: ~
+            form_login:
+                login_path: ss_login 
+                check_path: ss_login_check
+                username_parameter: "login[login]"
+                password_parameter: "login[password]"
+                csrf_parameter: "login[csrf_token]"
+                csrf_provider: form.csrf_provider                
+                success_handler: soundshare.eventlistener.loginlistener              
+            logout: ~
+                          
+
+   

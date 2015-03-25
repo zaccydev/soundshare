@@ -1,0 +1,6 @@
+services:
+    ss.twig.ss_extension:
+        class: "Twig_Extension_StringLoader"
+        tags:
+            - {name: twig.extension}
+    

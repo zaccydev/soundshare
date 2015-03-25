@@ -1,0 +1,6 @@
+{% form_theme form 'SoundShareCommunityBundle:Form:fields.html.twig' %}
+{% extends "SoundShareCommunityBundle::layout.html.twig" %}
+{% block content %} 
+    Are you sure you want {{ fname }} to be one of your friend ?
+    {{ form(form) }}
+{% endblock %}
