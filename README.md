@@ -16,19 +16,16 @@ Parmi les éléments que j'ai utilisé :
 * Tests
 * Twig et Assetic
 * SwiftMailer
-### fonctionnalités
-```
+
+## fonctionnalités
 Un utilisateur peut consulter le site sans être inscrit, il dispose alors d'un simple accès aux fichiers disponibles.
 Il est possible de s'inscrire sur le site, cela permet de déposer des fichiers. Les fichiers disponibles sur le site concernent un type de musique, ils sont publics ou privés. Pour avoir accès aux fichiers privés d'un utilisateur celui-ci doit vous ajouter dans sa liste d'amis. De même si vous voulez partager vos fichiers privés avec un ou plusieurs utilisateurs, vous devez les ajouter dans votre liste d'amis.
 Un captcha est utilisé sur le formulaire de login, la gestion des utilisateurs enregistrés est faites avec l'ORM Doctrine, le mot de passe utilisateur est crypté en base de données.
 L'administrateur du site à la possiblité de gérer (ajouter/supprimer/mettre à jour) les nouvelles disponibles sur le site.
-```
 ### Reste à faire
-```
 Intégration/desgin, ce qui est en place n'est pas travaillé.
 Tri des fichiers par catégories/utilisateurs
 Intégration du lecteur de fichiers sons en popup (permettre de naviguer sur le site en écoutant un fichier)
-```
 #### droits d'auteurs
-Dans le cade du respect des droits d'auteurs, les fichiers mp3 utilisés avec l'application sont limités à 10 secondes.
+Dans le cadre du respect des droits d'auteurs, les fichiers mp3 utilisés avec l'application sont limités à 10 secondes.
 
