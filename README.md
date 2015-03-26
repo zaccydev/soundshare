@@ -28,6 +28,3 @@ L'administrateur du site à la possiblité de gérer (ajouter/supprimer/mettre �
 - Tri des fichiers par catégories/utilisateurs
 - Intégration du lecteur de fichier son en popup (permettre de naviguer sur le site en écoutant un fichier)
 
-#### droits d'auteurs
-Dans le cadre du respect des droits d'auteurs, les fichiers mp3 utilisés avec l'application sont limités à 10 secondes.
-
